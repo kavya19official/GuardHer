@@ -1,7 +1,7 @@
 // backend/services/sosService.js
 
 const memoryStore = require('../db/memoryStore');
-const evidenceStore = require('../db/evidenceStore');
+const evidenceStore = require('../db/evidencestore');
 const { v4: uuidv4 } = require('uuid');
 
 class SOSService {
