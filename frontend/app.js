@@ -718,39 +718,3 @@ window.GuardHer = {
     addNewAlert,
     viewAlertDetails
 };
-async function analyzeMessage() {
-    const text = document.getElementById("messageInput").value;
-  
-    const res = await fetch("http://localhost:5000/api/analyze", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message: text })
-    });
-  
-    const data = await res.json();
-    showResult(data);
-  }
-  function showResult(data) {
-    document.getElementById("risk").innerText = data.risk;
-    document.getElementById("label").innerText = data.label;
-    document.getElementById("explanation").innerText = data.explanation;
-  }
-  const recognition = new webkitSpeechRecognition();
-recognition.continuous = false;
-recognition.lang = 'en-IN';
-
-recognition.onresult = (event) => {
-  const transcript = event.results[0][0].transcript;
-  sendToBackend(transcript);
-};
-
-recognition.start();
-const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-const mediaRecorder = new MediaRecorder(stream);
-
-mediaRecorder.start();
-
-  
-  
