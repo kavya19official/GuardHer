@@ -1,0 +1,18 @@
+{
+  "name": "guardher-ai",
+  "version": "1.0.0",
+  "description": "AI Module for GuardHer Women Safety App",
+  "main": "analyzeMessage.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node testCases.js"
+  },
+  "keywords": ["ai", "safety", "women"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
